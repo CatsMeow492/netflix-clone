@@ -1,0 +1,3 @@
+npx creat-next-app -e with-tailwindcss clone
+
+yarn add --dev @tailwindcss/jit
