@@ -5,3 +5,5 @@ npx creat-next-app -e with-tailwindcss clone
 yarn add --dev @tailwindcss/jit
 
 clone and use npm install to run on a new machine
+
+yarn add next-auth
