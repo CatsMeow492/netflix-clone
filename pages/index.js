@@ -1,12 +1,11 @@
 import Head from 'next/head'
+import { useSession, signIn, signOut } from "next-auth/react"
 
 export default function Home() {
+  const { data: session } = useSession();
   return (
     
-    <div
-      className="flex flex-col items-center justify-center min-h-screen bg-black"
-      
-    >
+    <div className="flex flex-col items-center justify-center min-h-screen bg-black" >
 
       <Head>
         <title>Netflix Clone</title>
@@ -17,8 +16,7 @@ export default function Home() {
         style={{
           'background-image':
             'linear-gradient(rgb(0 0 0 / 60%), rgb(0 0 0 / 60%)), url(https://assets.nflxext.com/ffe/siteui/vlv3/03fdc4bf-72f6-4926-83a7-a76e6a1a5591/9f09b85f-530e-4090-82c3-a60ea2b3177f/US-en-20211115-popsignuptwoweeks-perspective_alpha_website_small.jpg)',
-        }}
-        
+        }}    
       >
         
         <h1 className="text-5xl font-bold text-white max-w-lg">
@@ -34,7 +32,7 @@ export default function Home() {
         
         <div className='flex mt-4'>
           <input placeholder='Email address' className='bg-white p-4 min-w-[400px]' />
-          <button className='flex items-center bg-[#e50914] text-white text-xl px-8 rounded-sm'>
+          <button onClick={() => signIn()} className='flex items-center bg-[#e50914] text-white text-xl px-8 rounded-sm'>
             Get Started
             <svg 
               xmlns="http://www.w3.org/2000/svg" 
