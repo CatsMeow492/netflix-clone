@@ -1,38 +1,67 @@
 import Head from 'next/head'
 import { useSession, signIn, signOut } from "next-auth/react"
+import { useEffect } from 'react';
+import Router from 'next/dist/client/router';
 
 export default function Home() {
+
   const { data: session } = useSession();
+
+  // useEffect(() => {
+  //   Router.push('/app');
+  // })
+
   return (
     
-    <div className="flex flex-col items-center justify-center min-h-screen bg-black" >
-
+    <div className="flex flex-col items-center justify-center min-h-screen bg-black" style={{
+      'background-image':
+        'linear-gradient(rgb(0 0 0 / 60%), rgb(0 0 0 / 60%)), url(https://assets.nflxext.com/ffe/siteui/vlv3/03fdc4bf-72f6-4926-83a7-a76e6a1a5591/9f09b85f-530e-4090-82c3-a60ea2b3177f/US-en-20211115-popsignuptwoweeks-perspective_alpha_website_small.jpg)',
+    }}  >
+      
       <Head>
         <title>Netflix Clone</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center bg-black"
-        style={{
-          'background-image':
-            'linear-gradient(rgb(0 0 0 / 60%), rgb(0 0 0 / 60%)), url(https://assets.nflxext.com/ffe/siteui/vlv3/03fdc4bf-72f6-4926-83a7-a76e6a1a5591/9f09b85f-530e-4090-82c3-a60ea2b3177f/US-en-20211115-popsignuptwoweeks-perspective_alpha_website_small.jpg)',
-        }}    
-      >
-        
+      <header className="flex justify-between w-full px-12 py-8"> 
+        <div>
+            {!session ? (
+              <button
+                onClick={() => signIn('google')}
+                className="flex items-center bg-[#e50914] text-white text-sm px-4 py-2 rounded top-0"
+              >
+                Sign In
+              </button>
+            ) : (
+              <button
+                onClick={() => signOut()}
+                className="flex items-center bg-[#e50914] text-white text-sm px-4 py-2 rounded top-0"
+              >
+                Sign Out
+              </button>
+            )}
+        </div>
+      </header>
+      
+      <main className="flex flex-col items-center justify-center flex-1 px-20 text-center w-full h-full">
+      
         <h1 className="text-5xl font-bold text-white max-w-lg">
           Unlimited movies, TV shows, and more.
         </h1>
+
         <h2 className="text-2xl text-white my-4 mb-8">
           Watch anywhere. Cancel Anytime.
         </h2>
+
         <br></br>
+
         <p className="text-lg text-white">
           Ready to watch? Enter your email to create or restart your membership
         </p>
         
         <div className='flex mt-4'>
           <input placeholder='Email address' className='bg-white p-4 min-w-[400px]' />
-          <button onClick={() => signIn()} className='flex items-center bg-[#e50914] text-white text-xl px-8 rounded-sm'>
+          <button className='flex items-center bg-[#e50914] text-white text-xl px-8 rounded-sm'>
             Get Started
             <svg 
               xmlns="http://www.w3.org/2000/svg" 
@@ -47,6 +76,7 @@ export default function Home() {
             </svg>
           </button>
         </div>
+     
       
       </main>
     
