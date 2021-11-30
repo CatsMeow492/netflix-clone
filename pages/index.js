@@ -18,6 +18,7 @@ export default function Home() {
           'background-image':
             'linear-gradient(rgb(0 0 0 / 60%), rgb(0 0 0 / 60%)), url(https://assets.nflxext.com/ffe/siteui/vlv3/03fdc4bf-72f6-4926-83a7-a76e6a1a5591/9f09b85f-530e-4090-82c3-a60ea2b3177f/US-en-20211115-popsignuptwoweeks-perspective_alpha_website_small.jpg)',
         }}
+        
       >
         
         <h1 className="text-5xl font-bold text-white max-w-lg">
