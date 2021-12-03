@@ -1,6 +1,24 @@
-# Next.js + Tailwind CSS Example
+# To set up locally
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v2.2)](https://blog.tailwindcss.com/tailwindcss-2-2) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+
+```
+npx creat-next-app -e with-tailwindcss clone
+cd clone 
+git clone https://github.com/CatsMeow492/netflix-clone
+npm install
+yarn add --dev @tailwindcss/jit
+yarn add next-auth
+```
+
+Then use either 
+``` yarn dev ```
+or 
+``` npm run dev ```
+To start the project on localhost:3000
+
+# Next.js + Tailwind CSS 
+
+This netflix clone uses Tailwind CSS](https://tailwindcss.com/) [(v2.2)](https://blog.tailwindcss.com/tailwindcss-2-2) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
 
 It uses the new [`Just-in-Time Mode`](https://tailwindcss.com/docs/just-in-time-mode) for Tailwind CSS.
 

@@ -1,7 +1,12 @@
-23m
+57m
 
 npx creat-next-app -e with-tailwindcss clone
 
 yarn add --dev @tailwindcss/jit
 
 clone and use npm install to run on a new machine
+
+yarn add next-auth
+
+yarn add messages --ignore-engines
+yarn add layout --ignore-engines
